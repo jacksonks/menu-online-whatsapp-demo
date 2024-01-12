@@ -3,14 +3,14 @@ $(document).ready(function () {
 });
 
 var cardapio = {};
-
 var MEU_CARRINHO = [];
 var MEU_ENDERECO = null;
-
+var PAGAMENTO = null;
 var VALOR_CARRINHO = 0;
 var VALOR_ENTREGA = 7.5;
 
 var CELULAR_EMPRESA = "5592999984796";
+var CHAVE_PIX = "depois coloca aqui";
 
 cardapio.eventos = {
   init: () => {
@@ -169,6 +169,7 @@ cardapio.metodos = {
     }
 
     if (etapa == 2) {
+      // $("#lblTituloEtapa").text("Endereço de entrega e Forma de Pagamento:");
       $("#lblTituloEtapa").text("Endereço de entrega:");
       $("#itensCarrinho").addClass("hidden");
       $("#localEntrega").removeClass("hidden");
@@ -535,7 +536,7 @@ cardapio.templates = {
                     <span class="btn-menos" onclick="cardapio.metodos.diminuirQuantidade('\${id}')"><i class="fas fa-minus"></i></span>
                     <span class="add-numero-itens" id="qntd-\${id}">0</span>
                     <span class="btn-mais" onclick="cardapio.metodos.aumentarQuantidade('\${id}')"><i class="fas fa-plus"></i></span>
-                    <span class="btn btn-add" onclick="cardapio.metodos.adicionarAoCarrinho('\${id}')"><i class="fa fa-shopping-bag"></i></span>
+                    <span class="btn btn-add" onclick="cardapio.metodos.adicionarAoCarrinho('\${id}')">Adicionar</span>
                 </div>
             </div>
         </div>
